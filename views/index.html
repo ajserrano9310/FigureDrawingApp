@@ -42,43 +42,54 @@
     <div class="nav-wrapper">
       <div class="nav-headers-wrappers">
         <div class="nav-main-header">Draw!</div>
+
         <div class="nav-subheading">Practice drawing every day!</div>
       </div>
-
 
       <!-- Links for practice -->
       <div class="sub-links">
         <div class="home">
-          <i class="fa-solid fa-house"></i>
-          Home
+          <a class="highlight" href="#">
+            <i class="fa-solid fa-house"></i>
+            Home
+          </a>
         </div>
 
         <div class="learn">
-          <i class="fa-solid fa-chalkboard-user"></i>
-          Learn
+          <a class="highlight" href="#">
+            <i class="fa-solid fa-chalkboard-user"></i>
+            Learn
+          </a>
         </div>
       </div>
     </div>
 
-    <div class="container">
-      <div class="descriptions">
-        <p>Practice with high quality references, or use your own!</p>
-      </div>
-      <div class="card">
-        <img
-          src="../Resources/gesture_banner.jpeg"
-          alt="Image of gesture drawing"
-        />
-        <div class="card-body">
-          <h5 class="card-title">Gesture Drawing</h5>
-          <p class="descriptions">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil
-          </p>
-          <a class="card-link" href="/views/gestureView.html" role="button"
-            >Practice</a
-          >
-          <a class="card-link" href="gestureView.html" role="button">Learn</a>
+    <!--Practice section Bar-->
+    <div class="practice-options">
+      <div class="practice-sections">
+        <div class="option">
+          <a href="#gesture"> gesture </a>
         </div>
+        <div class="option">
+          <a href="#portrait"> portrait </a>
+        </div>
+        <div class="option">
+          <a href="#still-life"> still lifes </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="options">
+      <div id="gesture">
+        The gesture div
+      </div>
+
+      <div id="portrait">
+        the portrait div
+      </div>
+
+      <div id="still-life">
+        the still life 
       </div>
     </div>
   </body>

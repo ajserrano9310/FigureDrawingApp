@@ -19,21 +19,22 @@ body {
 
 .descriptions p {
   font-family: "Work Sans", sans-serif;
+  font-size: large;
 }
 
-
+/*#region navigagtion-wrapper*/
 .nav-wrapper{
   background-color: #809A6F;
   display: flex;
   justify-content: center;
-  height: 400px;
+  height: 300px;
   transition: 0.5s;
   margin-left: 50px;
   margin-top: 50px;
   border-radius: 25px;
   margin-right: 50px;
-  
 }
+
 
 .nav-wrapper:hover{
   background-color:#CC9C75; 
@@ -47,6 +48,7 @@ body {
   color: #D5D8B5;
 }
 
+
 .nav-wrapper > .nav-headers-wrappers > .nav-subheading{
 
   font-family: 'Work Sans', sans-serif;
@@ -58,18 +60,35 @@ body {
   margin-bottom: 50px;
   font-weight: 1.5rem;
   text-align: center;
-
+  transition: 0.3s;
 }
 
 .nav-wrapper > .sub-links{
   font-family: 'Work Sans', sans-serif;
   font-weight: 900px;
   margin-top: 135px;
-
-
-
 }
 
+.nav-wrapper > .sub-links > .home a {
+  text-decoration: none;
+  color: #D5D8B5;
+  transition: 0.3s;
+}
+
+.nav-wrapper > .sub-links > .home > .highlight:hover{
+  color: #A25B5B; 
+}
+
+
+.nav-wrapper > .sub-links > .learn a {
+  text-decoration: none;
+  color: #D5D8B5;
+  transition: 0.3s;
+}
+
+.nav-wrapper > .sub-links > .learn > .highlight:hover{
+  color: #A25B5B; 
+}
 
 
 .nav-heading > .nav-sub-header{
@@ -77,6 +96,27 @@ body {
   grid-template-columns: 1fr;
 }
 
+
+/**
+* Practice content Styles
+*/
+
+.options {
+  margin-top:900px
+}
+
+#gesture {
+  font-family: "Montserrat", sans-serif;
+  margin-bottom:900px; 
+}
+
+.practice-options > .practice-sections  {
+  display:grid; 
+  margin-left: 200px;
+  grid-template-columns: 2fr 2fr 2fr;
+  border: solid black;
+  background-color: #A25B5B;
+}
 
 .select {
   color: mediumseagreen;
