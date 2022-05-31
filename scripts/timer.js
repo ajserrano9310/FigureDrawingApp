@@ -68,12 +68,7 @@ function activateModal() {
         setTimer(); 
         modal.style.display = "block";
         setImage(0); 
-       
-        
-
     }
-
-  
 }
 
 
