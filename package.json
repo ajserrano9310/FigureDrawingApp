@@ -1,7 +1,7 @@
 {
   "name": "personalProject",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple application for practicing drawing",
   "main": "server.js",
   "scripts": {
     "devStart": "nodemon server.js",
@@ -19,7 +19,10 @@
   },
   "homepage": "https://github.com/ajserrano9310/personalProject#readme",
   "dependencies": {
-    "express": "^4.18.1"
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongodb": "^4.6.0",
+    "mongoose": "^6.3.5"
   },
   "devDependencies": {
     "nodemon": "^2.0.16"
