@@ -110,12 +110,26 @@ body {
   margin-bottom:900px; 
 }
 
+.practice-options{
+  background-color: #A25B5B;
+  border: #CC9C75 1px solid;
+  height: 50px;
+}
+
 .practice-options > .practice-sections  {
   display:grid; 
-  margin-left: 200px;
+  margin-left: 400px;
   grid-template-columns: 2fr 2fr 2fr;
-  border: solid black;
-  background-color: #A25B5B;
+  
+  
+}
+
+.practice-options > .practice-sections > .option a{
+  text-decoration: none;
+  color: #D5D8B5;
+  text-transform: uppercase;
+  font-family: 'Work Sans', sans-serif;
+  
 }
 
 .select {

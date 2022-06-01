@@ -4,13 +4,9 @@ const minutes = 60;
 var timeInterval;
 
 var imagesFromDB = [];
-var images = [];
 var index = 0;
-const imageID = "current";
 
 const image_input = document.querySelector("#image_input");
-
-var uploadedImage = "";
 
 /**
  * MODAL CODE
@@ -31,11 +27,6 @@ closeBtn.onclick = function () {
   stopTimer();
 };
 
-//First Commit?
-//Another commit for checking purposes
-
-/* TIMER DISPLAY */
-//var timerDisplay = document.getElementById("timer");
 
 /*
  * SET ARRAY OF IMAGES
@@ -129,7 +120,7 @@ function getRadio() {
   var elements = document.getElementsByName("time");
   var chosenTime;
 
-  for (i = 0; i < elements.length; i++) {
+  for (var i = 0; i < elements.length; i++) {
     if (elements[i].checked) {
       chosenTime = elements[i].value;
     }
@@ -147,36 +138,32 @@ function getRadio() {
  * Load the images from Database
  * */
 function fetchImages() {
-  alert("Baby steps");
-  var url = "/getImages";
-  
-  $.post(url)
-    .done(function(result) {
-        console.log('an iq 159');
-        //setImages(result); 
-    }).always(function(){
-        console.log('aways option')
-    })
-    .fail(function(){
-        console.log("this failed"); 
-    })
-
+  $.get("/getImages", function (data) {
+    setImages(data);
+  });
 }
 
-function setImages(images) {
-  imagesFromDB = images;
+/**
+ * Get images URL and set them to local array.
+ * @param {image objects} documents
+ */
+function setImages(documents) {
+  documents.forEach((document) => {
+    imagesFromDB.push(document.url);
+  });
 }
 
-function getImages(){
-    console.log(imagesFromDB); 
-    return imagesFromDB; 
+function getImages() {
+  console.log(imagesFromDB);
+  return imagesFromDB;
 }
 
 function resetImage(index) {
-  if (index >= imagesFromDB.length) {
-    alert("Images are done");
+  if (index > imagesFromDB.length) {
+    closeModal();
     return;
   }
-
   setImage(index);
 }
+
+function closeModal() {}

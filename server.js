@@ -1,8 +1,4 @@
 
-
-
-var arrayOfUrls = []; 
-
 const express = require("express");
 const path = require("path");
 const app = express();
@@ -15,24 +11,36 @@ app.get("/gesture", function (req, res) {
   res.sendFile(path.resolve("views/gestureView.html"));
 });
 
-app.post('/getImages', async function(req, res){
-  
-  console.log('Ajax call succeded'); 
-  var namesS = ['Tony soprano', 'Carmela Soprano', 'Meadow Soprano', 'AJ Soprano']; 
+var MongoClient = require("mongodb").MongoClient;
+var url = "mongodb://localhost:27017/db-images";
 
-  var array = getImagesFromDB(); 
-  console.log(array); 
+/**
+ * Ajax call
+ */
+app.get("/getImages", (req, res) => {
 
-  //res.send(arrayOfUrls);
+  MongoClient.connect(url, function (err, db) {
+    if (err) throw err;
+    var dbo = db.db("db-images");
+    dbo
+      .collection("repo")
+      .find({})
+      .toArray(function (err, result) {
+        if (err){
+          console.log("there was an error with the db call"); 
+          throw err;
+        } 
+        console.log("db call was a success");
+        res.send(result)
+        db.close();
+      });
+  });
+});
 
 
-  return 'something'; 
-})
 app.use(express.static("styles"));
 app.use(express.static("scripts"));
 
-var MongoClient = require("mongodb").MongoClient;
-var url = "mongodb://localhost:27017/db-images";
 
 
 const server = app.listen(8000, function () {
@@ -41,27 +49,3 @@ const server = app.listen(8000, function () {
   // Starting the Server at the port 3000
 });
 
-async function saveImagesLocally(result) {
-
-  arrayOfUrls = result; 
-  console.log(arrayOfUrls);
-
-}
-
-
-function getImagesFromDB(){
-  MongoClient.connect(url, function (err, db) {
-    if (err) throw err;
-    var dbo = db.db("db-images");
-    dbo
-      .collection("repo")
-      .find({})
-      .toArray(function (err, result) {
-        if (err) throw err;
-        console.log("during client call:" +  result.length);  
-        saveImagesLocally(result); 
-        db.close();
-        return result; 
-      });
-  });
-}
