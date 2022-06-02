@@ -23,121 +23,172 @@ body {
 }
 
 /*#region navigagtion-wrapper*/
-.nav-wrapper{
-  background-color: #809A6F;
+.nav-wrapper {
+  background-color: #809a6f;
   display: flex;
   justify-content: center;
   height: 500px;
   transition: 0.5s;
-  /*margin-left: 50px;*/
-  /*margin-top: 50px;*/
-  /*border-radius: 25px;*/
-  /*margin-right: 50px;*/
 }
 
-
-.nav-wrapper:hover{
-  background-color:#CC9C75; 
+.nav-wrapper:hover {
+  background-color: #cc9c75;
 }
 
-.nav-wrapper > .nav-headers-wrappers > .nav-main-header{
+.nav-wrapper > .nav-headers-wrappers > .nav-main-header {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   text-align: center;
   font-size: 15rem;
-  color: #D5D8B5;
+  color: #d5d8b5;
 }
 
-
-.nav-wrapper > .nav-headers-wrappers > .nav-subheading{
-
-  font-family: 'Work Sans', sans-serif;
+.nav-wrapper > .nav-headers-wrappers > .nav-subheading {
+  font-family: "Work Sans", sans-serif;
   margin-top: -20px;
   margin-left: -15px;
-  margin-right: -30px; 
-  color: #D5D8B5; 
-  
-  background-color: #A25B5B;
+  margin-right: -30px;
+  color: #d5d8b5;
+
+  background-color: #a25b5b;
   margin-bottom: 50px;
   font-weight: 1.5rem;
   text-align: center;
   transition: 0.3s;
 }
 
-.nav-wrapper > .sub-links{
-  font-family: 'Work Sans', sans-serif;
+.nav-wrapper > .sub-links {
+  font-family: "Work Sans", sans-serif;
   font-weight: 900px;
   margin-top: 135px;
 }
 
 .nav-wrapper > .sub-links > .home a {
   text-decoration: none;
-  color: #D5D8B5;
+  color: #d5d8b5;
   transition: 0.3s;
 }
 
-.nav-wrapper > .sub-links > .home > .highlight:hover{
-  color: #A25B5B; 
+.nav-wrapper > .sub-links > .home > .highlight:hover {
+  color: #a25b5b;
 }
-
 
 .nav-wrapper > .sub-links > .learn a {
   text-decoration: none;
-  color: #D5D8B5;
+  color: #d5d8b5;
   transition: 0.3s;
 }
 
-.nav-wrapper > .sub-links > .learn > .highlight:hover{
-  color: #A25B5B; 
+.nav-wrapper > .sub-links > .learn > .highlight:hover {
+  color: #a25b5b;
 }
 
-
-.nav-heading > .nav-sub-header{
-  display:grid;
+.nav-heading > .nav-sub-header {
+  display: grid;
   grid-template-columns: 1fr;
 }
-
 
 /**
 * Practice content Styles
 */
 
-.options {
- 
-}
-
 #gesture {
-  font-family: "Montserrat", sans-serif; 
+  font-family: "Montserrat", sans-serif;
 }
 
-.practice-options{
-  background-color: #A25B5B;
-  border: #CC9C75 1px solid;
+.practice-options {
+  background-color: #a25b5b;
+  border: #cc9c75 1px solid;
   height: 50px;
 }
 
-.practice-options > .practice-sections  {
-  display:flex;
+.practice-options > .practice-sections {
+  display: flex;
   justify-content: space-between;
-  padding-left: 10vw; 
+  padding-left: 10vw;
   padding-right: 10vw;
   padding-top: 0.5vw;
-  
 }
 
-.practice-options > .practice-sections > .option a{
+.practice-options > .practice-sections > .option a {
   text-decoration: none;
-  color: #D5D8B5;
+  color: #d5d8b5;
   text-transform: capitalize;
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-size: 20px;
   transition: 0.5s;
+}
+
+.practice-options > .practice-sections > .option a:hover {
+  text-decoration: underline;
+}
+
+/**
+Options section 
+*/
+
+.options-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.options-wrapper > .block-wrapper {
+  width: 1500px;
+}
+
+.options-wrapper > .block-wrapper > .square {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+}
+.square > .block-header {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  padding: 42px;
+  border: #cc9c75 1px solid;
+}
+
+.square > .block-header a {
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  font-size: 5rem;
+  font-weight: 1000px;
+  transition: 0.75;
+  color:black
+}
+
+.square > .block-header > .practice-button {
+  background-color: #a25b5b;
+  color:#d5d8b5; 
+  height: 50px;
+  border:none;
+  
+  width: 150px;
+}
+
+.square > .block-image{
+  border: #cc9c75 1px solid;
+}
+
+.square > .block-header a:hover {
+  color:#a25b5b
+}
+
+.square > .block-image{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   
 }
 
-.practice-options > .practice-sections > .option a:hover{
-  text-decoration: underline;
+.block-image > .quote-wrapper{
+  font-family:'Work Sans', sans-serif; 
+  margin-left: -24px;
+  margin-top: 100px; 
+  font-size: 20px;
 }
+
+
 
 .select {
   color: mediumseagreen;
@@ -213,6 +264,6 @@ img {
   transition: 0.3s;
 }
 
-.close:hover{
-    cursor: pointer;
+.close:hover {
+  cursor: pointer;
 }
