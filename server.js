@@ -40,8 +40,7 @@ app.get("/getImages", (req, res) => {
 
 app.use(express.static("styles"));
 app.use(express.static("scripts"));
-
-
+app.use(express.static("Resources"));
 
 const server = app.listen(8000, function () {
   let host = server.address().address;

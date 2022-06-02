@@ -29,10 +29,10 @@ body {
   justify-content: center;
   height: 300px;
   transition: 0.5s;
-  margin-left: 50px;
+  /*margin-left: 50px;*/
   margin-top: 50px;
   border-radius: 25px;
-  margin-right: 50px;
+  /*margin-right: 50px;*/
 }
 
 
@@ -102,12 +102,11 @@ body {
 */
 
 .options {
-  margin-top:900px
+ 
 }
 
 #gesture {
-  font-family: "Montserrat", sans-serif;
-  margin-bottom:900px; 
+  font-family: "Montserrat", sans-serif; 
 }
 
 .practice-options{
@@ -117,19 +116,26 @@ body {
 }
 
 .practice-options > .practice-sections  {
-  display:grid; 
-  margin-left: 400px;
-  grid-template-columns: 2fr 2fr 2fr;
-  
+  display:flex;
+  justify-content: space-between;
+  padding-left: 10vw; 
+  padding-right: 10vw;
+  padding-top: 0.5vw;
   
 }
 
 .practice-options > .practice-sections > .option a{
   text-decoration: none;
   color: #D5D8B5;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-family: 'Work Sans', sans-serif;
+  font-size: 20px;
+  transition: 0.5s;
   
+}
+
+.practice-options > .practice-sections > .option a:hover{
+  text-decoration: underline;
 }
 
 .select {
