@@ -128,7 +128,8 @@ function getRadio() {
 
   if (typeof chosenTime === "undefined") {
     return undefined;
-  } else {
+  } 
+  else {
     var time = parseInt(chosenTime);
     return time;
   }
@@ -138,6 +139,11 @@ function getRadio() {
  * Load the images from Database
  * */
 function fetchImages() {
+
+  if(imagesFromDB.length > 0){
+    return; 
+  }
+
   $.get("/getImages", function (data) {
     setImages(data);
   });
