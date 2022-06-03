@@ -11,6 +11,10 @@ app.get("/gesture", function (req, res) {
   res.sendFile(path.resolve("views/gestureView.html"));
 });
 
+app.get("/own-set", function (req, res) {
+  res.sendFile(path.resolve("views/practice-nofiles.html"));
+});
+
 var MongoClient = require("mongodb").MongoClient;
 var url = "mongodb://localhost:27017/db-images";
 

@@ -39,6 +39,7 @@ if (image_input) {
     for (let i = 0; i < files.length; i++) {
       imagesFromDB.push(URL.createObjectURL(files[i]));
     }
+    setImage(0); 
   });
 }
 
@@ -49,13 +50,18 @@ function activateModal() {
   if (modal) {
     setTimer();
     modal.style.display = "block";
-    setImage(0);
   }
 }
 
 function setImage(i) {
+  if(imagesFromDB.length == 0){
+    console.log("There was a problem with the images. Could not upload them"); 
+    return; 
+  }
+
   let urlString = "url(" + imagesFromDB[i] + ")";
   modal.style.backgroundImage = urlString;
+  console.log("Image set no prob"); 
 }
 
 /**
@@ -92,7 +98,7 @@ function startTimer(duration, display) {
  * */
 function stopTimer() {
   clearInterval(timeInterval);
-  alert("timer stopped");
+  
 }
 
 /**
@@ -146,6 +152,7 @@ function fetchImages() {
 
   $.get("/getImages", function (data) {
     setImages(data);
+    setImage(0);
   });
 }
 
@@ -154,6 +161,12 @@ function fetchImages() {
  * @param {image objects} documents
  */
 function setImages(documents) {
+  console.log('The current size of the array: ' + imagesFromDB.length); 
+  if(imagesFromDB.length > 0){
+    imagesFromDB = []; 
+    console.log('The current length: ' + imagesFromDB.length)
+  }
+
   documents.forEach((document) => {
     imagesFromDB.push(document.url);
   });

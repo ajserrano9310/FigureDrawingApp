@@ -1,0 +1,65 @@
+/*#region navigagtion-wrapper*/
+.nav-wrapper {
+    background-color: #809a6f;
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    transition: 0.5s;
+  }
+  
+  .nav-wrapper:hover {
+    background-color: #cc9c75;
+  }
+  
+  .nav-wrapper > .nav-headers-wrappers > .nav-main-header {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    text-align: center;
+    font-size: 15rem;
+    color: #d5d8b5;
+  }
+  
+  .nav-wrapper > .nav-headers-wrappers > .nav-subheading {
+    font-family: "Work Sans", sans-serif;
+    margin-top: -20px;
+    margin-left: -15px;
+    margin-right: -30px;
+    color: #d5d8b5;
+  
+    background-color: #a25b5b;
+    margin-bottom: 50px;
+    font-weight: 1.5rem;
+    text-align: center;
+    transition: 0.3s;
+  }
+  
+  .nav-wrapper > .sub-links {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 900px;
+    margin-top: 135px;
+  }
+  
+  .nav-wrapper > .sub-links > .home a {
+    text-decoration: none;
+    color: #d5d8b5;
+    transition: 0.3s;
+  }
+  
+  .nav-wrapper > .sub-links > .home > .highlight:hover {
+    color: #a25b5b;
+  }
+  
+  .nav-wrapper > .sub-links > .learn a {
+    text-decoration: none;
+    color: #d5d8b5;
+    transition: 0.3s;
+  }
+  
+  .nav-wrapper > .sub-links > .learn > .highlight:hover {
+    color: #a25b5b;
+  }
+  
+  .nav-heading > .nav-sub-header {
+    display: grid;
+    grid-template-columns: 1fr;
+  }

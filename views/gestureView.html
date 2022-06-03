@@ -11,6 +11,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Style files -->    
+    <link rel="stylesheet" href="modal.css"/>
     <link rel="stylesheet" href="style.css"/>
 
     <!-- Fonts -->
@@ -29,6 +32,8 @@
 
     <title>Gesture</title>
   </head>
+
+  <!-- Body starts -->
   <body>
     <div class="container">
       <div class="page-headers">
@@ -97,38 +102,6 @@
       <!-- Image usage options -->
 
       <div class="accordion">
-        <div class="card">
-          <div class="card-header" id="headingOne">
-            <h5 class="mb-0">
-                <p class="lead">
-                  <!--Personal Images-->
-                  <i class="fa-solid fa-upload"></i>
-                  Use your own images!
-                </p>
-              </button>
-            </h5>
-          </div>
-
-            <div class="card-body">
-              <div class="descriptions">
-                <p>
-                  You can use your own set of images for this practice. Do not
-                  worry. We will not save your images unless you want us to. In
-                  case you want us to, they will remain private and for your use
-                  only.
-                </p>
-              </div>
-              <div>
-                <input type="file" id="image_input" webkitdirectory multiple />
-              </div>
-              <a
-                class="btn btn-link time-select"
-                onclick="activateModal()"
-                role="button"
-                >Start time</a
-              >
-            </div>
-          </div>
           <i class="fa-solid fa-books"></i>
           <div class="card">
             <div class="card-header" id="headingTwo">
@@ -206,7 +179,7 @@
         <span id="closeBTN" class="close">&times;</span>
 
         <div class="timer-banner" id="timer">
-          <div class="timer-banner-text" id="timer-caption">information</div>
+          <div class="timer-banner-text" id="timer-caption"></div>
         </div>
       </div>
     </div>
