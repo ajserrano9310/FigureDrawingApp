@@ -15,6 +15,8 @@
     <!-- Style files -->    
     <link rel="stylesheet" href="modal.css"/>
     <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="user-selections.css"/>
+    <link rel="stylesheet" href="common.css"/>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -34,94 +36,112 @@
   </head>
 
   <!-- Body starts -->
-  <body>
-    <div class="container">
-      <div class="page-headers">
-        <h1>How does it work?</h1>
-        <button type="button" onclick="fetchImages()" class="btn btn-primary">Primary</button>
+  <body onload="fetchImages()">
+
+    <div class="practice-header-wrapper">
+
+      <div class="page-header">
+        How does it work?
       </div>
+
+      <div class="page-links">
+        <div class="home">
+          <a class="highlight" href="/">
+            <i class="fa-solid fa-house"></i>
+            Home
+          </a>
+        </div>
+
+        <div class="learn">
+          <a class="highlight" href="#">
+            <i class="fa-solid fa-chalkboard-user"></i>
+            Learn
+          </a>
+        </div>
+      </div>
+
+    </div>
+      
+
+      
+
+
 
       <!-- Select timer -->
-
-      <div class="descriptions">
-        <p>First, select how long each image will be displayed.</p>
-      </div>
 
       <div>
         <hr />
       </div>
 
-      <div class="card">
-        <div class="card-header">
-          <h5 class="mb-0 lead">
-            <i class="fa-solid fa-hourglass"></i>
-            Select a time
-          </h5>
-        </div>
+      <div class="user-selections-wrapper">
 
-        <div class="card-body">
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="time"
-              id="timer1"
-              value="1"
-            />
-            1 min
-          </div>
+        <div class="user-time-selection">
 
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="time"
-              id="timer2"
-              value="2"
-            />
-            2 min
-          </div>
-        </div>
-      </div>
-
-      <div class="descriptions">
-        <hr />
-
-        <p>
-          The way the practice works is that you select the images that you want
-          to use: yours or ours. Then you select how long each image plays.<br />
-          If you decide to use our library, we will make use of 20 randomly
-          selected images. <br />
-          If you decide to upload your images, then we will display one by one
-          until there are no more left.
-        </p>
-
-        <hr />
-      </div>
-
-      <!-- Image usage options -->
-
-      <div class="accordion">
-          <i class="fa-solid fa-books"></i>
-          <div class="card">
-            <div class="card-header" id="headingTwo">
-              <h5 class="mb-0">
+          <div class="card h-200">
+            <div class="card-header">
+              <div class="selection-header">
+                <i class="fa-solid fa-hourglass"></i>
+                Select a time
+              </div>
+               
               
-                    <!--Library images-->
+            </div>
+    
+            <div class="card-body">
+              <div class="descriptions">
+                <p>
+                  Select the duration of each image. 
+                </p>
+                
 
-                    <i class="fa-solid fa-book"></i>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="time"
+                  id="timer1"
+                  value="1"
+                />
+                1 min
+              </div>
+    
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="time"
+                  id="timer2"
+                  value="2"
+                />
+                2 min
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="spacing"></div>
+
+        <div class="user-image-selection">
+
+          <div class="card">
+            <div class="card-header">
+              <div class="selection-header">
+                <i class="fa-solid fa-book"></i>
                     Our Library
-                  </p>
-              </h5>
+              </div>
             </div>
               <div class="card-body">
                 <div class="descriptions">
-                  <p>You can of course choose from our library of images.</p>
-
+                  <p>The images will rotate from our own library.</p>
                   <!-- Select gender of models -->
                   <div>
-                    <div>
-                      <h6 class="lead">Choose a gender of model</h6>
+                      <div class="descriptions">
+                        <p>
+                          Choose the gender of the model
+                        </p>
+                      </div>
                       <div class="form-check">
                         <input
                           class="form-check-input"
@@ -132,7 +152,7 @@
                         />
                         Male
                       </div>
-
+  
                       <div class="form-check">
                         <input
                           class="form-check-input"
@@ -143,7 +163,7 @@
                         />
                         Female
                       </div>
-
+  
                       <div class="form-check">
                         <input
                           class="form-check-input"
@@ -151,10 +171,11 @@
                           name="gender-selection"
                           id="no-preference"
                           value="3"
+                          checked="checked"
                         />
                         No preference
                       </div>
-                    </div>
+                    
                   </div>
                   <p>
                     <a
@@ -168,10 +189,17 @@
               </div>
             
           </div>
+
+
         </div>
       </div>
+    
 
-      <button type="button" onclick="getImages()" class="btn btn-primary">Primary</button>
+      <!-- Image usage options -->
+
+         
+         
+   
 
       <!-- The modal stuff-->
 

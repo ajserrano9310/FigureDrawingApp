@@ -47,6 +47,7 @@ if (image_input) {
  * ACTIVATE MODAL FOR VIEWING IMAGES
  * */
 function activateModal() {
+
   if (modal) {
     setTimer();
     modal.style.display = "block";
@@ -106,6 +107,7 @@ function stopTimer() {
  * start session timer.
  * */
 function setTimer() {
+
   var time = getRadio();
   if (typeof time == "undefined") {
     alert("Please select a time");
@@ -153,6 +155,7 @@ function fetchImages() {
   $.get("/getImages", function (data) {
     setImages(data);
     setImage(0);
+    console.log("Got the images I needed"); 
   });
 }
 
@@ -185,4 +188,3 @@ function resetImage(index) {
   setImage(index);
 }
 
-function closeModal() {}

@@ -1,0 +1,37 @@
+
+.user-selections-wrapper {
+    display: grid;
+    grid-template-columns: 2fr;
+}
+
+.user-selections-wrapper > .user-time-selection{
+
+    /*
+    margin-left: 75px; 
+    margin-right: 20px;
+    */
+
+    /*Vertical choice*/
+    margin-left: 250px; 
+    margin-right: 250px;
+    
+}
+
+.user-selections-wrapper > .user-image-selection{
+    /*
+    margin-right: 75px;
+    */
+
+    /* vertical choice */
+    margin-right: 250px;
+    margin-left: 250px; 
+    
+}
+
+.card > .card-header{
+    background-color: #a25b5b;
+}
+
+.selection-header{
+    color:#d5d8b5;
+}

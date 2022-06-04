@@ -38,10 +38,6 @@
       <div class="page-headers">
 
         <h1>How does it work?</h1>
-        <button type="button" onclick="fetchImages()" class="btn btn-primary">
-          Primary
-        </button>
-
         <div class="descriptions">
           <p> Select how long each image will be displayed.</p>
         </div>
@@ -118,5 +114,16 @@
 
       </div>
     </div>
+
+    <div id="myModal" class="modal">
+      <span id="closeBTN" class="close">&times;</span>
+
+      <div class="timer-banner" id="timer">
+        <div class="timer-banner-text" id="timer-caption"></div>
+      </div>
+    </div>
+  </div>
+    <script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="/timer.js"></script>
   </body>
 </html>
