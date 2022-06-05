@@ -1,0 +1,41 @@
+.practice-header-wrapper {
+    background-color: #809a6f;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    height: 150px;
+    transition: 0.5s;
+  }
+
+  .practice-header-wrapper > .page-header {
+      font-family: 'Montserrat',sans-serif ;
+      font-size: 3rem;
+      text-align: center;
+      color: #d5d8b5;;
+  }
+
+  .sub-links {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 900px;
+    text-align: center;
+  }
+  
+  .sub-links > .home a {
+    text-decoration: none;
+    color: #d5d8b5;
+    transition: 0.3s;
+  }
+  
+  .sub-links > .home > .highlight:hover {
+    color: #a25b5b;
+  }
+  
+  .sub-links > .learn a {
+    text-decoration: none;
+    color: #d5d8b5;
+    transition: 0.3s;
+  }
+  
+  .sub-links > .learn > .highlight:hover {
+    color: #a25b5b;
+  }

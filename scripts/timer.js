@@ -48,8 +48,12 @@ if (image_input) {
  * */
 function activateModal() {
 
+
   if (modal) {
-    setTimer();
+    if(setTimer() === undefined){
+      alert("Please select a time"); 
+      return; 
+    }
     modal.style.display = "block";
   }
 }
@@ -110,7 +114,6 @@ function setTimer() {
 
   var time = getRadio();
   if (typeof time == "undefined") {
-    alert("Please select a time");
     return undefined;
   }
 

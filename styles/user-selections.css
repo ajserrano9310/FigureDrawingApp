@@ -1,4 +1,31 @@
 
+
+@media (max-width: 1000px) {
+    .user-selections-wrapper > .user-time-selection{
+
+        /*
+        margin-left: 75px; 
+        margin-right: 20px;
+        */
+    
+        /*Vertical choice*/
+        margin-left: 50px !important; 
+        margin-right: 50px !important;
+        
+    }
+    
+    .user-selections-wrapper > .user-image-selection{
+        /*
+        margin-right: 75px;
+        */
+    
+        /* vertical choice */
+        margin-right: 50px !important;
+        margin-left: 50px !important; 
+        
+    }
+  }
+
 .user-selections-wrapper {
     display: grid;
     grid-template-columns: 2fr;
@@ -12,8 +39,8 @@
     */
 
     /*Vertical choice*/
-    margin-left: 250px; 
-    margin-right: 250px;
+    margin-left: 350px; 
+    margin-right: 350px;
     
 }
 
@@ -23,8 +50,8 @@
     */
 
     /* vertical choice */
-    margin-right: 250px;
-    margin-left: 250px; 
+    margin-right: 350px;
+    margin-left: 350px; 
     
 }
 

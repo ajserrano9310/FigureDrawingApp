@@ -33,29 +33,29 @@
     transition: 0.3s;
   }
   
-  .nav-wrapper > .sub-links {
+  .sub-links {
     font-family: "Work Sans", sans-serif;
     font-weight: 900px;
     margin-top: 135px;
   }
   
-  .nav-wrapper > .sub-links > .home a {
+  .sub-links > .home a {
     text-decoration: none;
     color: #d5d8b5;
     transition: 0.3s;
   }
   
-  .nav-wrapper > .sub-links > .home > .highlight:hover {
+  .sub-links > .home > .highlight:hover {
     color: #a25b5b;
   }
   
-  .nav-wrapper > .sub-links > .learn a {
+  .sub-links > .learn a {
     text-decoration: none;
     color: #d5d8b5;
     transition: 0.3s;
   }
   
-  .nav-wrapper > .sub-links > .learn > .highlight:hover {
+  .sub-links > .learn > .highlight:hover {
     color: #a25b5b;
   }
   
