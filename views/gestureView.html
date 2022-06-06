@@ -37,7 +37,12 @@
   </head>
 
   <!-- Body starts -->
-  <body onload="fetchImages()">
+  <body onload="fetchImages(q)">
+
+    <script>
+      var q = sessionStorage.getItem('query');
+      alert(q);
+    </script>
 
     <div class="practice-header-wrapper">
 

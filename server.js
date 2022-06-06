@@ -15,7 +15,6 @@ app.get("/own-set", function (req, res) {
   res.sendFile(path.resolve("views/practice-nofiles.html"));
 });
 
-// a comment 
 var MongoClient = require("mongodb").MongoClient;
 var url = "mongodb://localhost:27017/db-images";
 
@@ -23,19 +22,19 @@ var url = "mongodb://localhost:27017/db-images";
  * Ajax call
  */
 app.get("/getImages", (req, res) => {
-
+  
+  console.log("Coming in hot ", req.query);
   MongoClient.connect(url, function (err, db) {
     if (err) throw err;
-    var dbo = db.db("db-images");
-    dbo
-      .collection("repo")
-      .find({})
-      .toArray(function (err, result) {
+    var dbo = db.db("images");
+    var query = {type:req.query.type}; 
+    dbo.collection("repo").find(query).toArray(function (err, result) {
         if (err){
           console.log("there was an error with the db call"); 
           throw err;
         } 
-        console.log("db call was a success");
+        //console.log("db call was a success");
+        //console.log("db call result", result);
         res.send(result)
         db.close();
       });

@@ -27,6 +27,9 @@ closeBtn.onclick = function () {
   stopTimer();
 };
 
+function consologgin(x){
+  console.log(x);
+}
 
 /*
  * SET ARRAY OF IMAGES
@@ -59,6 +62,7 @@ function activateModal() {
 }
 
 function setImage(i) {
+
   if(imagesFromDB.length == 0){
     console.log("There was a problem with the images. Could not upload them"); 
     return; 
@@ -67,6 +71,9 @@ function setImage(i) {
   let urlString = "url(" + imagesFromDB[i] + ")";
   modal.style.backgroundImage = urlString;
   console.log("Image set no prob"); 
+
+  
+
 }
 
 /**
@@ -120,6 +127,8 @@ function setTimer() {
   let fiveMinutes = minutes * time,
     display = document.querySelector("#timer-caption");
   startTimer(fiveMinutes, display);
+
+  return true; 
 }
 
 /**
@@ -149,17 +158,27 @@ function getRadio() {
 /**
  * Load the images from Database
  * */
-function fetchImages() {
+function fetchImages(imageQuery) {
 
+  console.log('this is what is being queried', imageQuery);
   if(imagesFromDB.length > 0){
     return; 
   }
 
-  $.get("/getImages", function (data) {
-    setImages(data);
-    setImage(0);
-    console.log("Got the images I needed"); 
+  $.ajax({
+    url: '/getImages',
+    type: 'GET',
+    contentType: "application/json",
+    data: {
+        type: imageQuery,
+    },
+    success: function(response) {
+        console.log('data obateined', response);
+        setImages(response); 
+        setImage(0); 
+    }
   });
+  
 }
 
 /**
@@ -176,6 +195,12 @@ function setImages(documents) {
   documents.forEach((document) => {
     imagesFromDB.push(document.url);
   });
+
+  sessionStorage.setItem('urls', imagesFromDB);
+
+  console.log("The db returned " + imagesFromDB.length + " items. The array was safely stored as well");
+
+
 }
 
 function getImages() {

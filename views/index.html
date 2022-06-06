@@ -36,6 +36,7 @@
   </head>
 
   <body>
+    <script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
     <!-- NAV BAR-->
     <div class="nav-wrapper">
       <div class="nav-headers-wrappers">
@@ -96,7 +97,22 @@
             <div class="descriptions">
               <p>Find the line of action; the flow of the figure.</p>
             </div>
-            <a href="/gesture" class="practice-button">Practice</a>
+            <a id="gestureBTN" href="/gesture" class="practice-button">Practice</a>
+            <script>
+              $(document).ready(function(){
+                $("#gestureBTN").click(function(){
+                  sessionStorage.setItem('query', 'gesture');
+                })
+                $("#portraitBTN").click(function(){
+                  sessionStorage.setItem( 'query',"portrait");
+                })
+                $("#stillBTN").click(function(){
+                  sessionStorage.setItem('query',"still");
+                })
+
+              })
+             
+            </script>
               
           </div>
           <div class="block-image">
@@ -118,7 +134,7 @@
 
         <div class="square">
 
-          <div class="block-image"">
+          <div class="block-image">
             <div class="image-wrapper">
               <img src="portrait1.jpeg" />
             </div>
@@ -139,7 +155,7 @@
             <div class="descriptions">
               <p>Study the structure and beauty of the human face.</p>
             </div>
-            <a href="/gesture" class="practice-button">Practice</a>
+            <a id="portraitBTN" href="/gesture" class="practice-button">Practice</a>
             </a>
           </div>
           
@@ -163,9 +179,9 @@
               Still life
             </div>
             <div class="descriptions">
-              <p>Practice the understanding of the basic shapes.</p>
+              <p>Practice the understanding of basic shapes.</p>
             </div>
-            <a href="/gesture" class="practice-button">Practice</a>
+            <a id="stillBTN" href="/gesture" class="practice-button">Practice</a>
           </div>
           <div class="block-image">
             <div class="image-wrapper">
@@ -178,5 +194,8 @@
         </div>
       </div>
     </div>
+
+    <script src="/timer.js"></script>
+    
   </body>
 </html>
