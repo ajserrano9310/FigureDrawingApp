@@ -24,12 +24,10 @@ var captionText = document.getElementById("caption");
 var closeBtn = document.getElementById("closeBTN");
 closeBtn.onclick = function () {
   modal.style.display = "none";
+  captionText.textContent = ""; 
+  index = 0;
   stopTimer();
 };
-
-function consologgin(x){
-  console.log(x);
-}
 
 /*
  * SET ARRAY OF IMAGES
@@ -71,8 +69,6 @@ function setImage(i) {
   let urlString = "url(" + imagesFromDB[i] + ")";
   modal.style.backgroundImage = urlString;
   console.log("Image set no prob"); 
-
-  
 
 }
 

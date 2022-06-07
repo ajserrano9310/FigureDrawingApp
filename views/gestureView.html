@@ -1,216 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
-    
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Style files -->    
-    <link rel="stylesheet" href="modal.css"/>
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="user-selections.css"/>
-    <link rel="stylesheet" href="common.css"/>
-    <link rel="stylesheet" href="practice-page-styles.css"/>
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat&family=Roboto:wght@100&family=Ubuntu:wght@300&family=Work+Sans:wght@300&display=swap"
-      rel="stylesheet"
-    />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Font awesome link -->
-    <script
-      src="https://kit.fontawesome.com/89202e165b.js"
-      crossorigin="anonymous"
-    ></script>
+  <!-- Style files -->
+  <link rel="stylesheet" href="modal.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="user-selections.css" />
+  <link rel="stylesheet" href="common.css" />
+  <link rel="stylesheet" href="practice-page-styles.css" />
 
-    <title>Gesture</title>
-  </head>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat&family=Roboto:wght@100&family=Ubuntu:wght@300&family=Work+Sans:wght@300&display=swap"
+    rel="stylesheet" />
 
-  <!-- Body starts -->
-  <body onload="fetchImages(q)">
+  <!-- Font awesome link -->
+  <script src="https://kit.fontawesome.com/89202e165b.js" crossorigin="anonymous"></script>
 
-    <script>
-      var q = sessionStorage.getItem('query');
-    </script>
+  <title>Gesture</title>
+</head>
 
-    <div class="practice-header-wrapper">
+<!-- Body starts -->
 
-      <div class="page-header">
-        Practice
+<body onload="fetchImages(q)">
+
+  <script>
+    var q = sessionStorage.getItem('query');
+  </script>
+
+  <div class="practice-header-wrapper">
+
+    <div class="page-header">
+      Practice
+    </div>
+
+    <div class="page-links-wrapper">
+      <div class="sub-links">
+
+        <div class="home">
+          <a class="highlight" href="/">
+            <i class="fa-solid fa-house"></i>
+            Home
+          </a>
+        </div>
+
+        <div class="learn">
+          <a class="highlight" href="#">
+            <i class="fa-solid fa-chalkboard-user"></i>
+            Learn
+          </a>
+        </div>
+
       </div>
+    </div>
 
-      <div class="page-links-wrapper">
-        <div class="sub-links">
+  </div>
+  <div class="spacing"></div>
+  <div class="user-selections-wrapper">
 
-          <div class="home">
-            <a class="highlight" href="/">
-              <i class="fa-solid fa-house"></i>
-              Home
-            </a>
-          </div>
-  
-          <div class="learn">
-            <a class="highlight" href="#">
-              <i class="fa-solid fa-chalkboard-user"></i>
-              Learn
-            </a>
+    <div class="user-time-selection">
+
+      <div class="card">
+        <div class="card-header">
+          <div class="selection-header">
+            <i class="fa-solid fa-hourglass"></i>
+            Select a time
           </div>
 
+
+        </div>
+
+        <div class="card-body">
+          <div class="descriptions">
+            <p>
+              Select the duration of each image.
+            </p>
+
+
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="time" id="timer1" value="1" />
+            1 min
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="time" id="timer2" value="2" />
+            2 min
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="time" id="timer3" value="5" />
+            5 min
+          </div>
         </div>
       </div>
 
     </div>
-      <div class="spacing"></div>
-      <div class="user-selections-wrapper">
 
-        <div class="user-time-selection">
+    <div class="spacing"></div>
 
-          <div class="card h-200">
-            <div class="card-header">
-              <div class="selection-header">
-                <i class="fa-solid fa-hourglass"></i>
-                Select a time
-              </div>
-               
-              
-            </div>
-    
-            <div class="card-body">
+    <div class="user-image-selection">
+
+      <div class="card">
+        <div class="card-header">
+          <div class="selection-header">
+            <i class="fa-solid fa-book"></i>
+            Our Library
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="descriptions">
+            <p>The images will rotate from our own library.</p>
+            <!-- Select gender of models -->
+            <div>
               <div class="descriptions">
                 <p>
-                  Select the duration of each image. 
+                  Choose the gender of the model
                 </p>
-                
-
               </div>
               <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="time"
-                  id="timer1"
-                  value="1"
-                />
-                1 min
+                <input class="form-check-input" type="radio" name="gender-selection" id="male" value="1" />
+                Male
               </div>
-    
+
               <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="time"
-                  id="timer2"
-                  value="2"
-                />
-                2 min
+                <input class="form-check-input" type="radio" name="gender-selection" id="female" value="2" />
+                Female
               </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender-selection" id="no-preference" value="3"
+                  checked="checked" />
+                No preference
+              </div>
+
             </div>
+            <p>
+              <a class="btn btn-link time-select" onclick="activateModal()" role="button">Start timer</a>
+            </p>
           </div>
-
         </div>
 
-        <div class="spacing"></div>
-
-        <div class="user-image-selection">
-
-          <div class="card">
-            <div class="card-header">
-              <div class="selection-header">
-                <i class="fa-solid fa-book"></i>
-                    Our Library
-              </div>
-            </div>
-              <div class="card-body">
-                <div class="descriptions">
-                  <p>The images will rotate from our own library.</p>
-                  <!-- Select gender of models -->
-                  <div>
-                      <div class="descriptions">
-                        <p>
-                          Choose the gender of the model
-                        </p>
-                      </div>
-                      <div class="form-check">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="gender-selection"
-                          id="male"
-                          value="1"
-                        />
-                        Male
-                      </div>
-  
-                      <div class="form-check">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="gender-selection"
-                          id="female"
-                          value="2"
-                        />
-                        Female
-                      </div>
-  
-                      <div class="form-check">
-                        <input
-                          class="form-check-input"
-                          type="radio"
-                          name="gender-selection"
-                          id="no-preference"
-                          value="3"
-                          checked="checked"
-                        />
-                        No preference
-                      </div>
-                    
-                  </div>
-                  <p>
-                    <a
-                      class="btn btn-link time-select"
-                      onclick="activateModal()"
-                      role="button"
-                      >Start timer</a
-                    >
-                  </p>
-                </div>
-              </div>
-            
-          </div>
-
-
-        </div>
       </div>
-    
 
-      <!-- Image usage options -->
 
-         
-         
-   
-
-      <!-- The modal stuff-->
-
-      <div id="myModal" class="modal">
-        <span id="closeBTN" class="close">&times;</span>
-
-        <div class="timer-banner" id="timer">
-          <div class="timer-banner-text" id="timer-caption"></div>
-        </div>
-      </div>
     </div>
+  </div>
 
-    <script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
-    <script src="/timer.js"></script>
-  </body>
+
+  <!-- Image usage options -->
+
+
+
+
+
+  <!-- The modal stuff-->
+
+  <div id="myModal" class="modal">
+    <span id="closeBTN" class="close">&times;</span>
+
+    <div class="timer-banner" id="timer">
+      <div class="timer-banner-text" id="timer-caption"></div>
+    </div>
+  </div>
+  </div>
+
+  <script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+  <script src="/timer.js"></script>
+</body>
+
 </html>
