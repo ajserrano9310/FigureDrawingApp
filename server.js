@@ -2,7 +2,6 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-var array = []; 
 
 app.get("/", function (req, res) {
   res.sendFile(path.resolve("views/index.html"));
@@ -16,16 +15,11 @@ app.get("/own-set", function (req, res) {
   res.sendFile(path.resolve("views/practice-nofiles.html"));
 });
 
-//var MongoClient = require("mongodb").MongoClient;
-//var url = "mongodb://localhost:27017/db-images";
-
 const {MongoClient, ServerApiVersion} = require('mongodb');
-const url = 'connection string';
+const url = "mongodb+srv://ajserrano93:1093ajss@cluster0.gxkkw.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
-
-
-async function getBooks(queryParam){
+async function getBooks(queryParam, res){
 
   console.log("the query was", queryParam);
 
@@ -36,13 +30,9 @@ async function getBooks(queryParam){
     const collection = db.collection("imageRepo");
 
     const query = {type:queryParam}; 
-    const cursor = collection.find(query); 
+    var cursor = await collection.find(query).toArray();
 
-    if((await cursor.count()) === 0){
-      console.log("No documents found!");
-    }
-
-    await cursor.forEach(item => array.push(item.url)); 
+    res.send(cursor);
 
   }finally{
     await client.close();
@@ -50,32 +40,10 @@ async function getBooks(queryParam){
 }
 
 
-
-/**
- * Ajax call
- */
-
 app.get("/getImages", (req, res) => {
 
-  getBooks(req.query.type).catch(console.dir);
-  res.send(array);
-  
-  /*
-  MongoClient.connect(url, function (err, db) {
-    if (err) throw err;
-    var dbo = db.db("images");
-    var query = {type:req.query.type}; 
-    dbo.collection("repo").find(query).toArray(function (err, result) {
-        if (err){
-          console.log("there was an error with the db call"); 
-          throw err;
-        } 
+  getBooks(req.query.type, res).catch(console.dir);
 
-        res.send(result)
-        db.close();
-      });
-  });
-  */
 });
 
 
@@ -86,6 +54,6 @@ app.use(express.static("Resources"));
 const server = app.listen(8000, function () {
   let host = server.address().address;
   let port = server.address().port;
-  // Starting the Server at the port 3000
+
 });
 
