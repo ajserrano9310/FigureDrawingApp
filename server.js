@@ -16,7 +16,7 @@ app.get("/own-set", function (req, res) {
 });
 
 const {MongoClient, ServerApiVersion} = require('mongodb');
-const url = "mongodb+srv://ajserrano93:1093ajss@cluster0.gxkkw.mongodb.net/?retryWrites=true&w=majority";
+const url = "";
 const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
 async function getBooks(queryParam, res){
