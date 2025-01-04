@@ -1,5 +1,5 @@
 // GLOBALS
-
+// globals 2
 const minutes = 60;
 var timeInterval;
 
